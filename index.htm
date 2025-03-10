@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="boot/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.htm">
+    <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/all.min.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div class="w-75 py-4 mx-auto shadow-lg mt-5 bg-white rounded ">
+
+        <div class="form-floating mb-3">
+          <input oninput="validateProductInput(this)" type="text" class="form-control border-0 border-bottom" id="ProductName" placeholder="Product Name">
+          <div class="alert alert-danger py-1 mt-2 d-none">
+              <small>Product Name Must Start With Upper Case then Lower Case (e.g., "Samsung")</small>
+            </div>
+            <label for="ProductName">Product Name :</label>
+          </div>
+
+        <div class="form-floating mb-3">
+          <input oninput="validateProductInput(this)" type="number" class="form-control border-0 border-bottom" id="ProductPrice" placeholder="Product Price">
+          <div class="alert alert-danger py-1 mt-2 d-none">
+              <small>Product Price Must Be a Number Between 1 and 9999</small>
+          </div>
+          <label for="ProductPrice">Product Price :</label>
+          </div>
+
+        <div class="form-floating mb-3">   
+          <input oninput="validateProductInput(this)" list="Categories" type="text" class="form-control border-0 border-bottom" id="ProductCategory" placeholder="Product Category">
+          <div class="alert alert-danger py-1 mt-2 d-none">
+            <small>Product Category Must Be One of: Tv, Mobile, Laptop, Screens, Technology</small>
+        </div>
+          <label for="ProductCategory">Product Category :</label>
+            <datalist id="Categories">
+                <option value="Tv">
+                <option value="Mobile">
+                <option value="Laptop">
+                <option value=" Screans">
+                <option value=" Technology">
+
+            </datalist>
+          </div>
+
+        <div class="form-floating mb-3">
+            <textarea oninput="validateProductInput(this)" type="text" class="form-control border-0 border-bottom" id="ProductDescription" placeholder="Product Description"></textarea>
+            <label for="Product Description">Product Description:</label>
+          </div>
+        <div class="form-floating mb-3">
+            <input  accept="image/*" type="file" class="form-control border-0 border-bottom" id="ProductImage" placeholder="Product Image">
+            <label for="ProductImage">Product Image :</label>
+          </div>
+          <button id="addBtn" onclick=" addproduct()" class="btn btn-info text-white rounded-0 mx-3"> Add Product</button>
+          <button id="updateProduct" onclick="updateProduct()" class="btn btn-danger text-white rounded-0 mx-3 d-none"> Update Product</button>
+        </div>   
+    
+            <div class="container">
+              <input id="searchInput" oninput="searchProduct();" placeholder="Search By Name" class="form-control my-4 mx-5 w-25">
+              <div id="productRow" class="row py-5 ">
+                  
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+    <script src="index.js"></script>
+    <script src="boot/bootstrap.bundle.min.js"></script>
+</body>
+</html>
